@@ -1,0 +1,31 @@
+@media (min-width: $tablet) {
+    .now-item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding-top: 227px;
+        color: $link-color;
+        text-decoration: none; 
+        
+        &__img {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &__name {           
+            display: block;           
+            padding-right: 10px;
+            padding-left: 0;
+            margin-bottom: 10px;
+            color: $link-color;
+            font-family: 'Roboto Medium';
+            font-size: 16px;
+            font-weight: 400;
+            text-decoration: underline;
+            text-underline-position: under;
+            line-height: 22px;
+        }
+    }
+}

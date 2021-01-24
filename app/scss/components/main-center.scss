@@ -1,0 +1,102 @@
+@media (max-width: 749px) {
+    .main-center {
+        display: none;
+    } 
+}
+
+@media (min-width: $tablet) {
+    .main-center {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 45px;
+
+        &__news-items {
+            flex-basis: 32%;
+            flex-shrink: 0;
+            margin-right: 20px;
+        }
+
+        &__promo-text {
+            padding-right: 18px;
+            padding-left: 18px;
+            padding-top: 10px;
+            padding-bottom: 17px;
+            margin-bottom: 32px;
+            font-family: 'Roboto Light';
+            font-style: italic;
+            font-weight: 300;
+            font-size: 9px;
+            line-height: 20px;
+            background-color: $advantage-color;
+            border-radius: 10px;        
+              
+        }
+
+        &__promo {
+            display: flex;
+            flex-direction: column;
+            flex-basis: calc(80% - 20px);
+            flex-grow: 1;
+            padding-bottom: 13px;
+        }
+
+        &__promo-bold {
+            font-weight: 700;
+        }
+
+        &__promo-link {
+            color: $link-color;
+            font-family: 'Roboto Medium';
+            font-style: italic;
+            font-weight: 400;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+
+            &:hover,
+            &:focus {
+                color: $hover-color;
+            }
+        }
+    } 
+}
+
+@media (max-width: 1169px) {
+    .main-center {
+        &__short-menu {
+            display: none;
+        }
+    }
+}
+
+@media (min-width: $small-screen) {
+    .main-center {
+        &__news-items {
+            flex-basis: 29%;
+        }
+
+        &__promo-text {
+            padding-left: 38px;
+            padding-top: 12px;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+@media (min-width: $large-screen) {
+    .main-center {
+        flex-wrap: wrap;
+        &__news-items {
+            flex-basis: 24%;
+        }
+
+        &__promo {
+            flex-basis: calc(74% - 20px);
+        }
+        
+        &__short-menu {
+            flex-basis: 100%;
+            margin-bottom: 24px;
+        }
+    }
+}

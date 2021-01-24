@@ -1,0 +1,29 @@
+.slider {
+    &__wrapper {
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        position: relative;
+        flex-shrink: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__arrow {
+        color: $hover-color;
+        border: 1px;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    &__arrow--left {
+        transform: scale(-1,1);
+    }
+}

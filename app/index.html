@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Название сайта</title>
+    <link rel="stylesheet" href="css/style.min.css" >
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <include src="app/html/main-menu.html"></include>
+    <include src="app/html/header.html"></include>    
+    <main>        
+        <include src="app/html/main-center-block.html"></include>
+        <include src="app/html/new-items.html"></include>
+        <include src="app/html/recomended-items.html"></include>
+        <include src="app/html/sale-items.html"></include>
+        <include src="app/html/promos.html"></include>
+        <include src="app/html/now-items.html"></include>
+        <include src="app/html/brands.html"></include>
+        <include src="app/html/advantages.html"></include>
+        <include src="app/html/advantages2.html"></include>
+        <include src="app/html/advantages-numbers.html"></include>
+        <include src="app/html/work.html"></include>
+        <include src="app/html/seo-text.html"></include>
+    </main>
+    <include src="app/html/footer.html"></include>
+    <div class="popup">
+      <button class="popup__close" aria-label="close form">
+          <span class="popup__cross"></span>
+      </button>
+      <div class="popup__name">Напишите свой номер - мы вам перезвоним</div>
+          <form class="form" action="handler.php"  method="post" id="signup">
+              <label class="form__label">
+                  <span class="form__label-name form__label-name--req">Ваше имя *</span>
+                  <input type="text" class="form__input" name="name" vlaue="" required>
+                  <span class="form__error"></span>
+              </label>
+              <label class="form__label">
+                  <span class="form__label-name form__label-name--req">Телефон *</span>
+                  <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" vlaue="" placeholder="ххх-ххх-хххх" class="form__input" required>
+                  <span class="form__error"></span>
+              </label>         
+              <input type="submit" class="form__submit">
+          </form>
+      </div>
+      <div class="overlay"></div>
+      <script src="js/index.js"></script>
+  </body>
+</html>

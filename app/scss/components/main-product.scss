@@ -1,0 +1,213 @@
+.main-product {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 224px;
+    padding-bottom: 20px;
+    border: 1px solid $time-color;
+    border-radius: 10px;
+    transition: border-color 0.3s ease-in-out;
+
+    &:hover,
+    &:focus {
+        outline: 0;
+        border-color: $hover-color;
+    }
+
+    &__img {
+        position: absolute;
+        top: 35px;
+        left: 50%;
+        transform: translateX(-50%);
+        object-fit: contain;
+    }
+
+    &__name {
+        margin-top: 0;
+        margin-bottom: 22px;
+        font-family: 'Roboto Medium';
+        font-size: 16px;
+        line-height: 22px;
+        color: $link-color;
+        text-decoration: underline;
+        text-decoration-color: #b0c0d7;       
+    }
+
+    &__rates {
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 14px;
+        font-family: 'Roboto Light';
+        font-size: 13px;
+        line-height: 22px;
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+    }
+
+    &__buy {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 16px;
+        padding-left: 15px;
+        margin-right: 20px;
+        font-family: 'Roboto Medium';
+        font-size: 14px;
+        line-height: 28px;
+        color: $background-color;
+        text-transform: uppercase;
+        background-color: $button-color;
+        box-shadow: inset 0px -3px 0px 0px rgba(0, 1, 1, 0.23);
+        border: 0;
+        border-radius: 7px;
+        transition: background-color 0.3s ease-in-out;
+        cursor: pointer; 
+        
+        &:hover,
+        &:focus {
+            outline: 0;
+            background-color: rgb(70, 115, 171);
+        }
+    }
+
+    &__buy-icon {
+        display: block;
+        width: 20px;
+        height: 17px;
+        margin-right: 9px;
+
+        svg {
+            display: block;
+            width: 20px;
+            height: 17px;
+        }
+    }
+
+    &__more {
+        font-family: 'Roboto Light';
+        font-size: 13px;
+        line-height: 20px;
+        color: $link-color;
+        text-decoration: none;
+        border-bottom: 1px solid $link-color;
+    }
+
+    &__flag {
+        position: absolute;
+        top: -5px;
+        left: 22px;
+        z-index: 1;
+        width: 34px;
+        height: 45px;
+        display: block;     
+
+        &--new &-inside  {
+            background-color: $new-color;
+
+            &::before {
+                border-top-color: $new-color,
+            }
+        }
+
+        &--recomended &-inside  {
+            background-color: $best-color;
+
+            &::before {
+                border-top-color: $best-color,
+            }
+        }
+
+        &--sale &-inside {
+            font-family: 'Roboto Light';
+            font-size: 24px;
+            line-height: 26px;
+            background-color: $discount-color;
+
+            &::before {
+                border-top-color: $discount-color,
+            }
+        }
+    }
+
+    &__flag-inside {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        height: 34px; 
+        width: 34px; 
+        color: $background-color;
+        font-family: 'Roboto Medium';
+        font-size: 12px;
+        line-height: 22px;
+        background: $best-color;
+        position: relative;   
+
+        &::before {
+            content: '';
+            height: 0; 
+            width: 0;
+            position: absolute; 
+            left: 0; 
+            top: 98%;
+            border-top: 12px solid $best-color;
+            border-left: 17px solid transparent;
+            border-right: 17px solid transparent;
+        }
+    } 
+}
+
+@media (min-width: 750px) {
+    .main-product {
+        padding-right: 12px;
+        padding-left: 13px;
+
+        &__buy {
+            margin-right: 5px;
+        }
+
+        &__img {
+            margin-bottom: 44px;
+        }
+
+        &__flag {
+            top: -4px;
+            left: 10px;
+        }
+    }   
+}
+
+@media (min-width: $large-screen) {
+    .main-product {
+        padding-top: 228px;
+        padding-left: 20px;
+        padding-right: 11px;
+
+        &__img {
+            margin-bottom: 23px;
+        }
+
+        &__name {
+            margin-bottom: 18px;
+        }
+
+        &__rates {
+            margin-bottom: 18px;
+        }
+
+        &__buy {
+            margin-right: 15px;
+        }
+
+        &__more {
+            text-decoration: underline;
+            border-bottom: 0;
+        }
+    }
+}

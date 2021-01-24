@@ -1,0 +1,50 @@
+@mixin fontface($family, $localname, $filename, $weight, $style) {
+    @font-face {
+        font-display: swap;
+        font-family: $family;
+        src: local('#{$localname}'), url('../fonts/#{$filename}.woff2') format('woff2'),
+        url('../fonts/#{$filename}.woff') format('woff');;
+        font-weight: $weight;
+        font-style: $style;
+    }
+}
+@include fontface('Roboto Bold Italic', 'Roboto-Bold Italic', roboto-bold-italic, 700, italic);
+@include fontface('Roboto Light Italic', 'Roboto-Light Italic', roboto-light-italic, 300, italic);
+@include fontface('Roboto Light', 'Roboto-Light', roboto-light, 400, normal);
+@include fontface('Roboto Thin', 'RobotoTh-Regular', roboto-thin, 400, normal);
+@include fontface('Roboto Medium Italic', 'RobotoLt-Bold Italic', roboto-medium-italic, 700, italic);
+@include fontface('Roboto Medium', 'RobotoLt-Regular', roboto-medium, 400, normal);
+@include fontface('Roboto Regular', 'Roboto-Regular', roboto-regular, 400, normal);
+
+@mixin visually-hidden {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+@mixin container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+
+    @media (min-width: $tablet) {
+    }
+
+    @media (min-width: $small-screen) {
+    }
+
+    @media (min-width: $large-screen) {
+        max-width: $large-screen;
+    }
+}
+

@@ -1,0 +1,202 @@
+
+@keyframes popup-fade {
+    0% {
+        opacity:0;
+    }
+    50% {
+        opacity:50%;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 3;    
+    display: none;
+    flex-direction: column;
+    width: 80%;
+    padding-left: 63px;
+    padding-right: 63px;
+    padding-top: 30px;
+    padding-bottom: 30px; 
+    background-color: $background-color;
+    box-shadow: 0 0 0.8px rgba(0,0,0,0.5);
+    transform: translate3d(-47%, -50%, 0);
+
+    &__close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        border: 0;
+        width: 29px;
+        height: 29px;
+        padding: 0;
+        color: $background-color;
+        background-color: $text-color;
+    }
+
+    &__cross {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 14px;
+            left: 2px;
+            width: 23px;
+            height: 1px;
+            transform: rotate(45deg);
+            background-color: $background-color;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 14px;
+            right: 2px;
+            width: 23px;
+            height: 1px;
+            transform: rotate(-45deg);
+            background-color: $background-color;
+        }
+    }
+    
+    &--active {
+        display: block;
+        animation-name: popup-fade;
+        animation-duration: 0.3s;
+        animation-timing-function:  linear;
+        animation-delay: 0;
+    }
+
+    &__name {
+        margin-bottom: 25px;
+        font-size: 24px;
+        line-height: 1;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    
+}
+
+@media (min-width: $small-screen) {
+    .popup {
+        width: 740px;
+    }
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    
+
+    &__label {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-basis: 100%;
+        margin-bottom: 17px;
+    }
+
+    &__input {
+        padding-right: 16px;
+        padding-left: 16px;
+        padding-top: 11px;
+        padding-bottom: 11px;
+        width: 100%;
+        font-family: inherit;
+        font-size: 14px;
+        font-style: italic;
+        border: 1px solid #c3c3c3;
+        background-color: $background-color;
+        border-radius: 0;
+        transition: border-color 0.3s ease-in-out;
+
+        &:focus,
+        &:hover,
+        &:focus-within {
+            border-color: blue;
+            outline: none;
+        }
+    }
+
+    &__input:valid {
+        border-color: green;
+        box-shadow: inset 0px 0px 13px 0px rgba(green, 0.75);
+    }
+
+    &__input.invalid {
+        border-color: red;
+        box-shadow: inset 0px 0px 13px 0px rgba(228, 106, 106, 0.75);
+
+        &::placeholder {
+            color: red;
+        } 
+    }
+
+    &__textarea {
+        padding-right: 16px;
+        padding-left: 16px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 100%;
+        height: 142px;
+        font-family: inherit;
+        font-size: 14px;
+        font-style: italic;
+        border: 1px solid #c3c3c3;
+        background-color: $background-color;
+        border-radius: 0;
+    }
+
+    &__submit {
+        align-self: center;
+        padding: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        color: $background-color;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        background-color: $link-color;
+        border: 1px solid transparent;
+        border-radius: 0;
+        cursor: pointer;
+    }     
+}
+
+@media (min-width: $small-screen) {
+    .form {
+        justify-content: space-between;
+        
+        &__label {
+            flex-basis: calc(50% - 10px);
+        }
+    }
+}
+
+.overlay {
+    z-index: 2;
+    background-color: rgba(0,0,0,0.5); 
+
+    &--active {
+        position:absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        animation-name: popup-fade;
+        animation-duration: 0.3s;
+        animation-timing-function:  linear;
+        animation-delay: 0;
+    }
+}

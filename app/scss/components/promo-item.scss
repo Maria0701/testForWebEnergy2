@@ -1,0 +1,110 @@
+.promo-item {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 18px;
+    flex-direction: column;
+    border: 1px solid #dbdee6;
+    border-radius: 10px;
+
+    &__name {
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-family: 'Roboto Medium';
+        font-size: 16px;
+        line-height: 22px;
+        color: $link-color;
+        text-align: center;
+        text-underline-position: under;
+        text-decoration: underline;
+        text-decoration-color: #b0c0d7;  
+    }
+
+    &__img-container {
+        position: relative;
+        padding-top: percentage(124 / 289);
+        margin-bottom: 15px;
+        overflow: hidden;
+    }
+
+    &__img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        background-size: cover;
+        transform: translate(-50%, -50%);
+    }
+
+    &__text {
+        padding-right: 3px;
+        padding-left: 13px;
+        margin-top: 0;
+        margin-bottom: 50px;
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    &__countdown {
+        padding-top: 16px;
+        padding-bottom: 8px;
+        margin-bottom: 7px;
+        background-color: $time-color;
+    }
+
+    &__more {
+        color: $link-color;
+        align-self: center;
+        font-size: 13px;
+        line-height: 17px;
+        text-align: center;
+        text-decoration: none;
+        border-bottom: 1px solid $link-color;
+    }
+}
+
+@media (min-width: 750px) {
+    .promo-item {
+        &__name {
+            padding-left: 14px;
+            padding-right: 14px;
+            text-align: left;
+        }
+
+        &__img-container {
+            padding-top: 57.90657%;
+        }
+
+        &__text {
+            margin-bottom: 13px;
+        }
+    }
+}
+
+@media (min-width: $small-screen) {
+    .promo-item {
+        padding-top: 18px;
+        
+        &__name {
+            padding-right: 18px;
+            padding-left: 18px;
+        }
+    }
+}
+
+@media (min-width: $large-screen) {
+    .promo-item {
+        &__img-container {
+            padding-top: 51.9%;
+        }
+
+        &__countdown {
+            padding-bottom: 4px;
+        }
+
+        &__text {
+            padding-left: 18px;
+        }
+    }
+}

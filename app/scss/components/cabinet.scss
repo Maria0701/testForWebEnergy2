@@ -1,0 +1,32 @@
+.cabinet {
+    &__link {
+        color: $link-color;
+        cursor: pointer;
+        transition: color 0.3s ease-in-out,
+            border-bottom-color 0.3s ease-in-out;
+
+        &:hover,
+        &:focus {
+            color: $hover-color;
+            border-bottom-color: $hover-color;
+        }
+    }   
+}
+
+@media (max-width: 749px) {
+    .cabinet {
+        &__link--login {
+            display: none;
+        }
+    }
+}
+
+@media (min-width: $tablet) {
+    .cabinet {
+        &__link--login {
+            margin-right: 20px;
+            font-size: 13px;
+            line-height: 20px;
+        }
+    }
+}

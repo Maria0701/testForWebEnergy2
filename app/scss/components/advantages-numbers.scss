@@ -1,0 +1,121 @@
+@media (min-width: $tablet) {
+    .main-numbers {
+        text-transform: uppercase;
+
+        &__name-large {
+            display: none;
+        }
+
+        &__item  {
+            flex-basis: calc(100% / 4 - 9px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            &:not(:last-child) {
+                margin-right: 14px;
+            }
+        }
+
+        &__visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 130px;
+            height: 130px;
+            margin-bottom: 17px;
+            font-family: 'Roboto';            
+            font-weight: 700;
+            line-height: 1;
+            background-color: $background-color;
+            border: 1px solid #e1e4ea;
+            border-radius: 50%;
+
+            &--fir {
+                font-size: 80px;
+                color: $hover-color;
+            }
+
+            &--sec {
+                font-size: 54px;
+                color: $dark-blue;
+            }
+
+            &--third {
+                padding-top: 9px;
+                padding-left: 10px;
+                font-size: 44px;
+                color: $hover-color;
+
+                span {
+                    display: block;
+                    font-size: 19px;
+
+                    &:first-child {
+                        font-size: 44px;
+                    }
+
+                    &:last-child {
+                        font-size: 36px;
+                    }
+                }
+            }
+
+            &--forth {
+                font-size: 80px;
+                color: $dark-blue;
+            }
+
+            &--fifth {
+                font-size:80px;
+                color: $hover-color;
+            }
+
+            &--sixth {
+                font-size: 80px;
+                color: $dark-blue;
+            }
+        }
+
+        &__text {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 12px;
+            line-height: 18px;
+        }
+    }
+}
+
+@media (min-width: $small-screen) {
+    .main-numbers {
+        &__list {
+            justify-content: space-between;
+        }
+        
+        &__top {
+            margin-bottom: 33px;
+        }
+        
+        &__item {
+            flex-basis: calc(100% / 6 - 30px);
+            
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+@media (min-width: $large-screen) {
+    .main-numbers {
+        &__list {
+            justify-content: space-between;
+        }
+        
+        &__item {
+            flex-basis: calc(100%/6 - 30px);
+        }
+    }
+}

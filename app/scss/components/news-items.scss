@@ -1,0 +1,22 @@
+@media (min-width: $tablet) {
+    .news-items {
+        &__name {
+            margin-bottom: 30px;
+            color: #2c3333;
+            font-family: 'Roboto Regular';
+            font-size: 20px;
+            line-height: 45px;
+            text-transform: uppercase;
+            border-bottom: 1px solid $time-color;
+        }
+
+        &__more {
+            color: $link-color;
+            font-family: 'Roboto Light';
+            font-size: 13px;
+            line-height: 20px;
+            text-decoration: none;
+            border-bottom: 1px solid $link-color;
+        }
+    }
+}

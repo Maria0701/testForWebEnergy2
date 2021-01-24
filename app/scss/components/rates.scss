@@ -1,0 +1,13 @@
+.rates {
+    &__old {
+        padding-left: 5px;
+        margin-right: 10px;
+        font-family: 'Roboto Medium';
+        font-size: 20px;  
+    }
+
+    &__new {
+        color: $hover-color;
+        text-decoration: line-through;
+    }
+}
